@@ -4,7 +4,7 @@ class Output extends Component {
     render() {
         return (
             <div>
-                Output is : {this.props.result}
+                <input value={this.props.result} placeholder='Output' readOnly/>
             </div>
         )
     }

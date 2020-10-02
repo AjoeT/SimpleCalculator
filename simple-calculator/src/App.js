@@ -35,22 +35,26 @@ function App() {
       return (setResult(parseInt(first) / parseInt(second)))
   }
   function clear() {
-    Array.from(document.querySelectorAll("input")).forEach(
+    Array.from(document.querySelectorAll("input")).forEach(           //document.querySelectorAll("input") returns Nodelist.
       input => (input.value = "")     // inorder to select all the input elements from the current page and set value
     );
     setfirst('')
     setSecond('')
+    setResult('')
   }
   return (
-    <div className="App">
-      <InputBox type='number' onChange={(e) => setfirst(e.target.value)} placeholder='Input One'/>
-      <InputBox type='number' onChange={(e) => setSecond(e.target.value)} placeholder='Input two'/>
-      <button type='submit' onClick={add}>Add</button>
-      <button type='submit' onClick={subtraction}>Subtraction</button>
-      <button type='submit' onClick={multiplication}>Multiplication</button>
-      <button type='submit' onClick={division}>Division</button>
-      <button type='submit' onClick={clear}>Clear</button>
-      <Output result={result} />
+    <div className='Container'>
+      <h1 className='Heading'>Simple Calculator</h1>
+      <div className="App">
+        <InputBox type='number' onChange={(e) => setfirst(e.target.value)} placeholder='Input One' />
+        <InputBox type='number' onChange={(e) => setSecond(e.target.value)} placeholder='Input two' />
+        <button className='Buttons' type='submit' onClick={add}>+</button>
+        <button className='Buttons' type='submit' onClick={subtraction}>-</button>
+        <button className='Buttons' type='submit' onClick={multiplication}>x</button>
+        <button className='Buttons' type='submit' onClick={division}>÷</button><br />
+        <button className='Buttons' type='submit' onClick={clear}>Clear</button>
+        <Output result={result} />
+      </div>
     </div>
   );
 }
