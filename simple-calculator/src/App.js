@@ -35,7 +35,9 @@ function App() {
       return (setResult(parseInt(first) / parseInt(second)))
   }
   function clear() {
-    return (setfirst('11'))
+    Array.from(document.querySelectorAll("input")).forEach(
+      input => (input.value = "")     // inorder to select all the input elements from the current page and set value
+    );
   }
   return (
     <div className="App">
@@ -43,7 +45,7 @@ function App() {
       <InputBox type='number' onChange={(e) => setSecond(e.target.value)} placeholder='Input two'/>
       <button type='submit' onClick={add}>Add</button>
       <button type='submit' onClick={subtraction}>Subtraction</button>
-      <button type='submit' onClick={multiplication∂}>Multiplication</button>
+      <button type='submit' onClick={multiplication}>Multiplication</button>
       <button type='submit' onClick={division}>Division</button>
       <button type='submit' onClick={clear}>Clear</button>
       <Output result={result} />
