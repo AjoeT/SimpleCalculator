@@ -38,6 +38,8 @@ function App() {
     Array.from(document.querySelectorAll("input")).forEach(
       input => (input.value = "")     // inorder to select all the input elements from the current page and set value
     );
+    setfirst('')
+    setSecond('')
   }
   return (
     <div className="App">
